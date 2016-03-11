@@ -94,9 +94,9 @@
                         <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="oIV-0J-G6R" kind="relationship" relationship="viewControllers" id="qgK-wj-Giv"/>
-                        <segue destination="DYv-o8-eBZ" kind="relationship" relationship="viewControllers" id="UpT-W1-dQZ"/>
                         <segue destination="IWs-ug-SWg" kind="relationship" relationship="viewControllers" id="9Be-9J-cBi"/>
+                        <segue destination="DYv-o8-eBZ" kind="relationship" relationship="viewControllers" id="UpT-W1-dQZ"/>
+                        <segue destination="oIV-0J-G6R" kind="relationship" relationship="viewControllers" id="qgK-wj-Giv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AXw-AI-H2B" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -107,12 +107,23 @@
         <scene sceneID="YSE-Sk-lOm">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IWs-ug-SWg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="New Feeds" image="NewsFeed" id="K8d-g4-zD7"/>
+                    <tabBarItem key="tabBarItem" title="New Feeds" image="NewsFeed" id="K8d-g4-zD7">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="unj-TI-tBb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.096956916030000007" blue="0.041772753439999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
+                                <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -127,14 +138,28 @@
         <scene sceneID="svt-9x-AL3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DYv-o8-eBZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Activities" image="Activities" id="awc-uj-J20"/>
+                    <tabBarItem key="tabBarItem" title="Activities" image="Activities" id="awc-uj-J20">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="D3d-3C-vbU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.99664331419999996" green="1" blue="0.17896798350000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
+                            <color key="value" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="ovZ-Ee-zWM" kind="relationship" relationship="rootViewController" id="648-0v-pMn"/>
                     </connections>
@@ -147,7 +172,13 @@
         <scene sceneID="oJX-rv-9Kj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oIV-0J-G6R" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" id="PnR-xF-lBk"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Profile" id="PnR-xF-lBk">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yTg-mA-Vhf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
