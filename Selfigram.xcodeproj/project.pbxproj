@@ -18,6 +18,7 @@
 		3A56A2171CA2409800FAF9BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56A2161CA2409800FAF9BE /* User.swift */; };
 		3A56A2191CA240AA00FAF9BE /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56A2181CA240AA00FAF9BE /* Post.swift */; };
 		3A56A21B1CA2415500FAF9BE /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A56A21A1CA2415500FAF9BE /* FeedViewController.swift */; };
+		3A90C5331CAA78C200D4A8E7 /* SelfieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A90C5321CAA78C200D4A8E7 /* SelfieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		3A56A2161CA2409800FAF9BE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = ../User.swift; sourceTree = "<group>"; };
 		3A56A2181CA240AA00FAF9BE /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Post.swift; path = ../Post.swift; sourceTree = "<group>"; };
 		3A56A21A1CA2415500FAF9BE /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		3A90C5321CAA78C200D4A8E7 /* SelfieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				3A1D7D591C9268D60049B9CD /* AppDelegate.swift */,
 				3A1D7D5B1C9268D60049B9CD /* ViewController.swift */,
 				3A1D7D5D1C9268D60049B9CD /* Main.storyboard */,
+				3A90C5321CAA78C200D4A8E7 /* SelfieCell.swift */,
 				3A0D18EA1C98F94A00533FC8 /* ProfileViewController.swift */,
 				3A1D7D601C9268D60049B9CD /* Assets.xcassets */,
 				3A1D7D621C9268D60049B9CD /* LaunchScreen.storyboard */,
@@ -270,6 +273,7 @@
 			files = (
 				3A56A2171CA2409800FAF9BE /* User.swift in Sources */,
 				3A0D18EB1C98F94A00533FC8 /* ProfileViewController.swift in Sources */,
+				3A90C5331CAA78C200D4A8E7 /* SelfieCell.swift in Sources */,
 				3A1D7D5C1C9268D60049B9CD /* ViewController.swift in Sources */,
 				3A1D7D5A1C9268D60049B9CD /* AppDelegate.swift in Sources */,
 				3A56A21B1CA2415500FAF9BE /* FeedViewController.swift in Sources */,
