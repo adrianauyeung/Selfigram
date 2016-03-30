@@ -22,8 +22,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="319.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tlL-fQ-njg">
-                                            <rect key="frame" x="8" y="-5" width="592" height="263"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tlL-fQ-njg">
+                                            <rect key="frame" x="0.0" y="8" width="600" height="250"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="XFm-im-yJq"/>
                                                 <constraint firstAttribute="height" constant="250" id="v9I-ct-DYY"/>
@@ -45,12 +45,12 @@
                                     <constraints>
                                         <constraint firstItem="tlL-fQ-njg" firstAttribute="top" secondItem="mhP-MZ-RPe" secondAttribute="topMargin" id="5pm-98-jeq"/>
                                         <constraint firstItem="j6S-79-HZM" firstAttribute="top" secondItem="k4f-jF-7Dz" secondAttribute="bottom" constant="8" id="7Tn-Cu-Zvd"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="tlL-fQ-njg" secondAttribute="trailing" id="UV3-wu-HGZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="tlL-fQ-njg" secondAttribute="trailing" id="UV3-wu-HGZ"/>
                                         <constraint firstItem="k4f-jF-7Dz" firstAttribute="top" secondItem="tlL-fQ-njg" secondAttribute="bottom" constant="8" id="jFa-Cd-Rpm"/>
                                         <constraint firstItem="k4f-jF-7Dz" firstAttribute="leading" secondItem="mhP-MZ-RPe" secondAttribute="leadingMargin" id="pUd-yO-U1J"/>
                                         <constraint firstItem="j6S-79-HZM" firstAttribute="leading" secondItem="mhP-MZ-RPe" secondAttribute="leadingMargin" id="tMF-7R-tqv"/>
                                         <constraint firstItem="k4f-jF-7Dz" firstAttribute="top" secondItem="tlL-fQ-njg" secondAttribute="bottom" constant="8" id="too-xJ-Kmj"/>
-                                        <constraint firstItem="tlL-fQ-njg" firstAttribute="leading" secondItem="mhP-MZ-RPe" secondAttribute="leadingMargin" id="w9n-OE-Q4L"/>
+                                        <constraint firstItem="tlL-fQ-njg" firstAttribute="leading" secondItem="mhP-MZ-RPe" secondAttribute="leading" id="w9n-OE-Q4L"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -76,6 +76,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ase-1V-Yxz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1696" y="-432"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wUG-51-m6y">
+            <objects>
+                <viewController id="k0y-lO-ORA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E0t-KM-6s8"/>
+                        <viewControllerLayoutGuide type="bottom" id="joX-9R-6aa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CBD-Id-TYX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0N3-oW-l7k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2435" y="-432"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="UpR-W5-cn6">
