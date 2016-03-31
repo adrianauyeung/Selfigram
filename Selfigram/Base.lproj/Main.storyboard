@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Feed View Controller-->
@@ -32,13 +33,13 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4f-jF-7Dz">
                                             <rect key="frame" x="8" y="266" width="86" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6S-79-HZM">
                                             <rect key="frame" x="8" y="290" width="93" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -66,12 +67,35 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="wj1-wv-g8y">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="aMN-xw-U1b">
-                            <connections>
-                                <action selector="cameraButtonPressed:" destination="Bn2-Pd-tF5" id="Yhe-oV-ULT"/>
-                            </connections>
-                        </barButtonItem>
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="SearchTag" borderStyle="roundedRect" placeholder="Insert to tag" textAlignment="natural" minimumFontSize="17" id="FUR-2a-MRn">
+                            <rect key="frame" x="157" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="aMN-xw-U1b">
+                                <connections>
+                                    <action selector="cameraButtonPressed:" destination="Bn2-Pd-tF5" id="Yhe-oV-ULT"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="K6i-aK-bly">
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WrQ-eG-NZA">
+                                    <rect key="frame" x="403" y="7" width="133" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Update Tag"/>
+                                    <connections>
+                                        <action selector="updateTag:" destination="Bn2-Pd-tF5" eventType="touchUpInside" id="FNC-Me-CsL"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchTag" destination="FUR-2a-MRn" id="BAj-X5-zU5"/>
+                        <outlet property="tableview" destination="GiY-Me-tba" id="caH-hd-54A"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ase-1V-Yxz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

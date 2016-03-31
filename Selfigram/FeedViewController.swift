@@ -9,17 +9,20 @@
 import UIKit
 
 class FeedViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-   
-    var words = ["Hello", "my", "name", "is", "Selfigram"]
-    
-    // var names = ["Adrian", "Brian", "Cindy", "Danny", "Ellie"]
-    
+    @IBOutlet var tableview: UITableView!
+
     var posts = [Post]()
+    
+    @IBOutlet weak var searchTag: UITextField!
+    
+    var tag = "city"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: "https://www.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=c49511cde0a768d5c81dff9fda15d2a5&tags=city")!) { (data, response, error) -> Void in
+        }
+    
+    func refreshTable() {
+        let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: "https://www.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=c49511cde0a768d5c81dff9fda15d2a5&tags=\(tag)")!) { (data, response, error) -> Void in
             
             if let jsonUnformatted = try? NSJSONSerialization.JSONObjectWithData(data!, options: []),
                 let json = jsonUnformatted as? [String : AnyObject],
@@ -57,8 +60,8 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
                 print("error with response data")
             }
             
-        }
-        
+    }
+    
         // this is called to start (or restart, if needed) our task
         task.resume()
         
@@ -195,6 +198,13 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
         
     }
 
+    
+    @IBAction func updateTag(sender: AnyObject) {
+        tag = searchTag.text!
+        posts.removeAll()
+        refreshTable()
+        tableView.reloadData()
+    }
 
     
     /*
