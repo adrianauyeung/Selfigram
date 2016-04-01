@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Selfigram/FeedViewController.swift"
-            timestampString = "481154894.861202"
+            timestampString = "481164504.355814"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "FeedViewController"
             landmarkType = "3">
          </BreakpointContent>

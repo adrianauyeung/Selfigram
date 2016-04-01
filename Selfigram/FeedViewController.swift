@@ -9,12 +9,11 @@
 import UIKit
 
 class FeedViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    @IBOutlet var tableview: UITableView!
-
-    var posts = [Post]()
     
+    @IBOutlet var tableview: UITableView!
     @IBOutlet weak var searchTag: UITextField!
     
+    var posts = [Post]()
     var tag = "city"
     
     override func viewDidLoad() {
@@ -242,14 +241,24 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "enlargeImage" {
+            let destination = segue.destinationViewController as! EnlargeImageViewController
+            
+            
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let currentPost = posts[indexPath.row]
+            }
+            // grab image or you can send the entire post.
+            
+//            destination.enlargeImage = ??
+            
+        }
     }
-    */
+    
 
 }

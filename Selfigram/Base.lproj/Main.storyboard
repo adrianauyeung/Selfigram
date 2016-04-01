@@ -58,6 +58,7 @@
                                     <outlet property="commentLabel" destination="j6S-79-HZM" id="L6Q-hD-OEc"/>
                                     <outlet property="selfieImageView" destination="tlL-fQ-njg" id="nPu-Ar-T5W"/>
                                     <outlet property="usernameLabel" destination="k4f-jF-7Dz" id="1z6-wl-KtR"/>
+                                    <segue destination="k0y-lO-ORA" kind="show" identifier="enlargeImage" id="aJ5-eR-9y1"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -68,7 +69,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="wj1-wv-g8y">
                         <nil key="title"/>
-                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="SearchTag" borderStyle="roundedRect" placeholder="Insert to tag" textAlignment="natural" minimumFontSize="17" id="FUR-2a-MRn">
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert to tag" textAlignment="natural" minimumFontSize="17" id="FUR-2a-MRn">
                             <rect key="frame" x="157" y="7" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -101,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="1696" y="-432"/>
         </scene>
-        <!--View Controller-->
+        <!--Enlarge Image View Controller-->
         <scene sceneID="wUG-51-m6y">
             <objects>
-                <viewController id="k0y-lO-ORA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EnlargeImage" id="k0y-lO-ORA" customClass="EnlargeImageViewController" customModule="Selfigram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="E0t-KM-6s8"/>
                         <viewControllerLayoutGuide type="bottom" id="joX-9R-6aa"/>
@@ -112,8 +113,16 @@
                     <view key="view" contentMode="scaleToFill" id="CBD-Id-TYX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R13-L7-K0i">
+                                <rect key="frame" x="13" y="81" width="498" height="389"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="enlargeImage" destination="R13-L7-K0i" id="DeL-22-imG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0N3-oW-l7k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -301,6 +310,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y8e-Xa-e6b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="884" y="1086"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JGW-AA-r6u">
+            <objects>
+                <viewController id="RIA-Bm-kUg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JCJ-ut-twJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="vGz-Nr-rrr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bme-h7-0iu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bze-YU-qrb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
