@@ -252,6 +252,7 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
             
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let currentPost = posts[indexPath.row]
+                destination.post = currentPost
             }
             // grab image or you can send the entire post.
             
