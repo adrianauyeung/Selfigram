@@ -114,14 +114,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R13-L7-K0i">
-                                <rect key="frame" x="13" y="81" width="498" height="389"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R13-L7-K0i">
+                                <rect key="frame" x="13" y="81" width="578" height="389"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALu-Cx-DuH">
+                                <rect key="frame" x="84" y="482" width="342" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZ7-4U-FXX">
+                                <rect key="frame" x="13" y="482" width="42" height="32"/>
+                                <state key="normal" title="Button" image="hearts-off"/>
+                                <connections>
+                                    <action selector="favImage:" destination="k0y-lO-ORA" eventType="touchUpInside" id="tqN-ya-HFo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="R13-L7-K0i" firstAttribute="leading" secondItem="CBD-Id-TYX" secondAttribute="leadingMargin" constant="-7" id="2MF-KP-FHy"/>
+                            <constraint firstItem="ALu-Cx-DuH" firstAttribute="leading" secondItem="FZ7-4U-FXX" secondAttribute="trailing" constant="29" id="ZrQ-li-Rry"/>
+                            <constraint firstItem="ALu-Cx-DuH" firstAttribute="top" secondItem="R13-L7-K0i" secondAttribute="bottom" constant="12" id="h1q-vF-OIW"/>
+                            <constraint firstItem="FZ7-4U-FXX" firstAttribute="top" secondItem="R13-L7-K0i" secondAttribute="bottom" constant="12" id="otx-1A-OWq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="R13-L7-K0i" secondAttribute="trailing" constant="-11" id="q9e-z0-mKc"/>
+                            <constraint firstItem="R13-L7-K0i" firstAttribute="top" secondItem="E0t-KM-6s8" secondAttribute="bottom" constant="17" id="sOP-SI-5xg"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="enlargeImage" destination="R13-L7-K0i" id="DeL-22-imG"/>
+                        <outlet property="favText" destination="ALu-Cx-DuH" id="O36-8E-TVe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0N3-oW-l7k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -333,6 +355,7 @@
         <image name="Activities" width="25" height="25"/>
         <image name="NewsFeed" width="25" height="25"/>
         <image name="Profile" width="25" height="25"/>
+        <image name="hearts-off" width="42" height="37"/>
         <image name="placeholder" width="256" height="256"/>
     </resources>
 </document>

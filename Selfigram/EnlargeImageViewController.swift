@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import Parse
+
 
 class EnlargeImageViewController: UIViewController {
     
     var post: Post!
     
+    @IBOutlet weak var favText: UILabel!
     @IBOutlet weak var enlargeImage: UIImageView?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        favText.text = "Tap to favourite image"
         
         let task = NSURLSession.sharedSession().downloadTaskWithURL(post.imageURL) { (url, response, error) -> Void in
             
@@ -30,8 +36,54 @@ class EnlargeImageViewController: UIViewController {
         }
         
         task.resume()
+
+    }
+    
+    @IBAction func favImage(sender: AnyObject) {
+        // Connect to Part
+        let favImage = PFObject(className: "Favourites")
+        favImage["imageTitle"] = post.comment
+        
+        // Convert image into Parse compatible data
+        if let imageData = UIImageJPEGRepresentation((self.enlargeImage?.image)!, 0.9),
+            let imageFile = PFFile(data: imageData){
+                favImage["imageFile"] = imageFile
+        }
+        
+        
+        // Login as Adrian
+        let user = PFUser()
+        let username = "Adrian"
+        let password = "abcd1234"
+        user.username = username
+        user.password = password
+        
+        // Sign into parse
+        PFUser.logInWithUsernameInBackground(username, password: password, block: { (user, error) -> Void in
+            if let user = user {
+                favImage["username"] = user.username
+                
+                // Save favourite image data to Parse
+                favImage.saveInBackgroundWithBlock({ (success, error) in
+                    if success {
+                        print("Favourite Image successfully saved")
+                        
+                        
+                    } else {
+                        print("save failed")
+                    }
+                })
+            }
+        })
+        
+
+        
+
+        
+        
         
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

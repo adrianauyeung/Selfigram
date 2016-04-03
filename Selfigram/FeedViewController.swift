@@ -40,8 +40,8 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
                             
                             let photoURLString = "https://farm\(farmID).staticflickr.com/\(serverID)/\(photoID)_\(secret).jpg"
                             if let photoURL = NSURL(string: photoURLString){
-                                let me = User(aUsername: title, aProfileImage: UIImage(named: "Grumpy-Cat")!)
-                                let post = Post(imageURL: photoURL, user: me, comment: "A Flickr Selfie")
+                                let me = User(aUsername: "Flickr Pic", aProfileImage: UIImage(named: "Grumpy-Cat")!)
+                                let post = Post(imageURL: photoURL, user: me, comment: title)
                                 self.posts.append(post)
                             }
                     }
