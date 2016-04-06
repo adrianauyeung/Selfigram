@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class Post {
-    
+    // WILL UPDATE TO V2: use Parse
     //let image:UIImage   // this lets us use an image we supply
     let imageURL:NSURL      // this lets us use an image supplied by the URL
     let user:User
