@@ -58,6 +58,7 @@ class EnlargeImageViewController: UIViewController {
         user.username = username
         user.password = password
         
+        
         // Sign into parse
         PFUser.logInWithUsernameInBackground(username, password: password, block: { (user, error) -> Void in
             if let user = user {
@@ -75,6 +76,8 @@ class EnlargeImageViewController: UIViewController {
                 })
             }
         })
+        
+        PFUser.logOutInBackground()
         
 
         

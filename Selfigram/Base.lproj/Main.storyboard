@@ -23,13 +23,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="319.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tlL-fQ-njg">
-                                            <rect key="frame" x="0.0" y="8" width="600" height="250"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="XFm-im-yJq"/>
-                                                <constraint firstAttribute="height" constant="250" id="v9I-ct-DYY"/>
-                                            </constraints>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4f-jF-7Dz">
                                             <rect key="frame" x="8" y="266" width="86" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -42,6 +35,13 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tlL-fQ-njg">
+                                            <rect key="frame" x="0.0" y="8" width="600" height="250"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="250" id="XFm-im-yJq"/>
+                                                <constraint firstAttribute="height" constant="250" id="v9I-ct-DYY"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="tlL-fQ-njg" firstAttribute="top" secondItem="mhP-MZ-RPe" secondAttribute="topMargin" id="5pm-98-jeq"/>
@@ -69,29 +69,39 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="wj1-wv-g8y">
                         <nil key="title"/>
-                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert to tag" textAlignment="natural" minimumFontSize="17" id="FUR-2a-MRn">
-                            <rect key="frame" x="157" y="7" width="240" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="camera" id="aMN-xw-U1b">
-                                <connections>
-                                    <action selector="cameraButtonPressed:" destination="Bn2-Pd-tF5" id="Yhe-oV-ULT"/>
-                                </connections>
+                        <leftBarButtonItems>
+                            <barButtonItem style="plain" id="egS-YZ-kg5">
+                                <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert to tag" textAlignment="natural" minimumFontSize="17" id="FUR-2a-MRn">
+                                    <rect key="frame" x="20" y="7" width="125" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
                             </barButtonItem>
                             <barButtonItem style="plain" id="K6i-aK-bly">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WrQ-eG-NZA">
-                                    <rect key="frame" x="403" y="7" width="133" height="30"/>
+                                    <rect key="frame" x="153" y="7" width="75" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Update Tag"/>
+                                    <state key="normal" title="Update"/>
                                     <connections>
                                         <action selector="updateTag:" destination="Bn2-Pd-tF5" eventType="touchUpInside" id="FNC-Me-CsL"/>
                                     </connections>
                                 </button>
                             </barButtonItem>
-                        </rightBarButtonItems>
+                        </leftBarButtonItems>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ea1-Sa-Mar">
+                            <rect key="frame" x="241" y="-10" width="118" height="64"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="Fav-star"/>
+                            <connections>
+                                <segue destination="BJk-ZD-YcD" kind="show" id="fTE-aB-SqS"/>
+                            </connections>
+                        </button>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="aMN-xw-U1b">
+                            <connections>
+                                <action selector="cameraButtonPressed:" destination="Bn2-Pd-tF5" id="Yhe-oV-ULT"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchTag" destination="FUR-2a-MRn" id="BAj-X5-zU5"/>
@@ -102,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="1696" y="-432"/>
         </scene>
-        <!--Enlarge Image View Controller-->
+        <!--Enlarge Image-->
         <scene sceneID="wUG-51-m6y">
             <objects>
-                <viewController storyboardIdentifier="EnlargeImage" id="k0y-lO-ORA" customClass="EnlargeImageViewController" customModule="Selfigram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EnlargeImage" title="Enlarge Image" id="k0y-lO-ORA" customClass="EnlargeImageViewController" customModule="Selfigram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="E0t-KM-6s8"/>
                         <viewControllerLayoutGuide type="bottom" id="joX-9R-6aa"/>
@@ -148,7 +158,52 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0N3-oW-l7k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2435" y="-432"/>
+            <point key="canvasLocation" x="2411" y="-1040"/>
+        </scene>
+        <!--Favourite List-->
+        <scene sceneID="wzS-29-dNY">
+            <objects>
+                <tableViewController title="Favourite List" id="BJk-ZD-YcD" customClass="FavouriteListViewController" customModule="Selfigram" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="298" sectionHeaderHeight="28" sectionFooterHeight="28" id="RMs-ab-CWh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="favImageCell" rowHeight="298" id="F6O-3Z-ie1" customClass="FavImageCell" customModule="Selfigram" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="298"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F6O-3Z-ie1" id="EqK-o5-qDM">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="297.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AxZ-FM-K32">
+                                            <rect key="frame" x="24" y="8" width="557" height="289"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="AxZ-FM-K32" firstAttribute="leading" secondItem="EqK-o5-qDM" secondAttribute="leadingMargin" constant="16" id="Gxt-l7-t2M"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="AxZ-FM-K32" secondAttribute="trailing" constant="11" id="XQJ-ER-MXy"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="favImageView" destination="AxZ-FM-K32" id="PDm-Cm-iLL"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BJk-ZD-YcD" id="bPH-ig-ujR"/>
+                            <outlet property="delegate" destination="BJk-ZD-YcD" id="4zf-Np-ZaQ"/>
+                        </connections>
+                    </tableView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="favTable" destination="RMs-ab-CWh" id="bSw-d8-fd8"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Xj-UM-lat" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2419" y="-144"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="UpR-W5-cn6">
@@ -353,6 +408,7 @@
     </scenes>
     <resources>
         <image name="Activities" width="25" height="25"/>
+        <image name="Fav-star" width="32" height="32"/>
         <image name="NewsFeed" width="25" height="25"/>
         <image name="Profile" width="25" height="25"/>
         <image name="hearts-off" width="42" height="37"/>
